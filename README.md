@@ -1,27 +1,21 @@
-# RSSNewsfeed
+#How to run:
+-----------
+1) Open the project in IDE
+2) In terminal, run "npm install" (make sure you are in the project directory)
+3) In terminal, run "ng serve" ( provided you have already installed Angular)
+4) In browser, hit the localhost URL given in the message which you recieve while running "ng serve" command
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
 
-## Development server
+#FYI:
+----
+1) Requirement for publication date and time (eg:May 29, 11:00) doesn't specify whether the month should be in 3 letter abbreviated form or full name of month. So, I have assumed that you are looking for full name of the month and written the code.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+2) For requirement for author name as first name followed by last name, the XML has only one tag - <author> with the full name. There is no real definition/split between the first name and last name. Also, the name of the firms like - "The Canadian Press" has been used as author name for some of the entries. Hence, I have displayed the author name exactly as mentioned in XML data.
 
-## Code scaffolding
+3) For requirement for author name, there are some stories which doesn't have author name in XML itself, for these cases I made a default author name as "unknown author".
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+4) For some stories, the title name may extend more than one line. Since there is no requirement mentioned to ellipsis for title, I have displayed the complete title name, unlike for description where i have used ellipsis for content for than 3 lines.
 
-## Build
+5) In the mockup image, there is no author name for mobile view. So I have assumed that the author name is not needed for mobile view and wrote the code to hide the author name for mobile view alone.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+6) In order to avoid CORS issue, I have written code to enable CORS with Proxy Configuration Settings (proxy.config.json file) in Angular.
