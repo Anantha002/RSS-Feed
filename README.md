@@ -14,8 +14,10 @@
 
 3) For requirement for author name, there are some stories which doesn't have author name in XML itself, for these cases I made a default author name as "unknown author".
 
-4) For some stories, the title name may extend more than one line. Since there is no requirement mentioned to ellipsis for title, I have displayed the complete title name, unlike for description where i have used ellipsis for content for than 3 lines.
+4) For requirement for description section, there are some stories which doesn't have description in XML itself, for these cases I made a default description as "No Description Availabe".
 
-5) In the mockup image, there is no author name for mobile view. So I have assumed that the author name is not needed for mobile view and wrote the code to hide the author name for mobile view alone.
+5) For some stories, the title name may extend more than one line. Since there is no requirement mentioned to ellipsis for title, I have displayed the complete title name, unlike for description where i have used ellipsis for content for than 3 lines.
 
-6) In order to avoid CORS issue, I have written code to enable CORS with Proxy Configuration Settings (proxy.config.json file) in Angular.
+6) In the mockup image, there is no author name for mobile view. So I have assumed that the author name is not needed for mobile view and wrote the code to hide the author name for mobile view alone.
+
+7) In order to avoid CORS issue, I have written code to enable CORS with Proxy Configuration Settings (proxy.config.json file) in Angular.
