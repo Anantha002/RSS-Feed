@@ -40,7 +40,8 @@ export class NewsfeedComponent implements OnInit {
 
     // Formatting publication date to desired format
     formatTime(dateTime: string) {
-        const convertedDate = new DatePipe('en-US').transform(new Date(dateTime), "MMM dd, hh:mm aaa");
+        let convertedDate = dateTime.length === 0 ? "No Date Available" 
+            : new DatePipe('en-US').transform(new Date(dateTime), "MMM dd, hh:mm aaa");
         return convertedDate;
     }
 
@@ -58,14 +59,16 @@ export class NewsfeedComponent implements OnInit {
 
                     // iterate through the items in RSS feed and put it on Array of objects
                     for (var i = 0; i < resultRSSItems.length; i++) {
-                        let descriptionString = this.extractDescription(resultRSSItems[i].DESCRIPTION[0]).length == 0
-                            ? "No Description Availabe"
+                        console.log(resultRSSItems[i]);
+                        let descriptionString = this.extractDescription(resultRSSItems[i].DESCRIPTION[0]).length === 0
+                            ? "No Description Available"
                             : this.extractDescription(resultRSSItems[i].DESCRIPTION[0]);
                         let convertedDate = this.formatTime(resultRSSItems[i].PUBDATE);
-                        let author = resultRSSItems[i].AUTHOR[0].length == 0 ? "Unknown Author" : resultRSSItems[i].AUTHOR;
-
+                        let author = resultRSSItems[i].AUTHOR[0].length === 0 ? "Unknown Author" : resultRSSItems[i].AUTHOR;
+                        let title = resultRSSItems[i].TITLE[0].length === 0 ? "Unknown Title" : resultRSSItems[i].TITLE;
+                        
                         // push RSS item into array
-                        this.rssNews.push(new RSSNewsElement(resultRSSItems[i].TITLE,
+                        this.rssNews.push(new RSSNewsElement(title,
                             author,
                             descriptionString,
                             convertedDate,
