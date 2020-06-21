@@ -58,7 +58,9 @@ export class NewsfeedComponent implements OnInit {
 
                     // iterate through the items in RSS feed and put it on Array of objects
                     for (var i = 0; i < resultRSSItems.length; i++) {
-                        let descriptionString = this.extractDescription(resultRSSItems[i].DESCRIPTION[0]);
+                        let descriptionString = this.extractDescription(resultRSSItems[i].DESCRIPTION[0]).length == 0
+                            ? "No Description Availabe"
+                            : this.extractDescription(resultRSSItems[i].DESCRIPTION[0]);
                         let convertedDate = this.formatTime(resultRSSItems[i].PUBDATE);
                         let author = resultRSSItems[i].AUTHOR[0].length == 0 ? "Unknown Author" : resultRSSItems[i].AUTHOR;
 
