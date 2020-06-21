@@ -16,8 +16,12 @@
 
 4) For requirement for description section, there are some stories which doesn't have description in XML itself, for these cases I made a default description as "No Description Availabe".
 
-5) For some stories, the title name may extend more than one line. Since there is no requirement mentioned to ellipsis for title, I have displayed the complete title name, unlike for description where i have used ellipsis for content for than 3 lines.
+5) For requirement for title section, there are some stories which doesn't have title in XML itself, for these cases I made a default description as "Unknown Title".
 
-6) In the mockup image, there is no author name for mobile view. So I have assumed that the author name is not needed for mobile view and wrote the code to hide the author name for mobile view alone.
+6) For requirement for date section, there are some stories which doesn't have date in XML itself, for these cases I made a default description as "No Date Available".
 
-7) In order to avoid CORS issue, I have written code to enable CORS with Proxy Configuration Settings (proxy.config.json file) in Angular.
+7) For some stories, the title name may extend more than one line. Since there is no requirement mentioned to ellipsis for title, I have displayed the complete title name, unlike for description where i have used ellipsis for content for than 3 lines.
+
+8) In the mockup image, there is no author name for mobile view. So I have assumed that the author name is not needed for mobile view and wrote the code to hide the author name for mobile view alone.
+
+9) In order to avoid CORS issue, I have written code to enable CORS with Proxy Configuration Settings (proxy.config.json file) in Angular.
